@@ -15,7 +15,6 @@ String normalizarTexto(String texto) {
   return removerAcentos(texto.trim().toLowerCase());
 }
 
-
 Future<void> finalizarPrograma() async {
   print('Finalizando o programa...');
   await Future.delayed(Duration(seconds: 3));

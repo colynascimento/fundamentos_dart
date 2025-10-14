@@ -20,7 +20,7 @@ void main() {
     int restoDivisao = a % b;
 
     print('-' * 70);
-    print('A sina de $a + $b = $soma');
+    print('A soma de $a + $b = $soma');
     print('A subtração de $a - $b = $subtracao');
     print('A multiplicação de $a × $b = $produto');
     print('A divisão de $a ÷ $b = ${divisao.toStringAsFixed(2)}');
