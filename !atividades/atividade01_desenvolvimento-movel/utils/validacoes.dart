@@ -9,3 +9,7 @@ bool verificadorDeNum(int? numero) {
 bool verificadorDeDouble(double? numero) {
     return numero != null;
 }
+
+bool verificadorDePar(numero) {
+    return numero % 2 == 0;
+}
