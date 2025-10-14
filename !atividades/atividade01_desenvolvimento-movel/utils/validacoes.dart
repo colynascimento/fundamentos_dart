@@ -5,3 +5,7 @@ bool verificadorDeInteiro(numero) {
 bool verificadorDeNum(int? numero) {
     return numero != null;
 }
+
+bool verificadorDeDouble(double? numero) {
+    return numero != null;
+}
