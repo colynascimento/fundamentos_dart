@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-    for (int i = 1; int <= 5; i++) {
+    for (int i = 1; i <= 5; i++) {
         print(i); //quebra de linha
     }
 

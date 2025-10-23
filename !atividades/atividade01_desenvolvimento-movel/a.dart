@@ -5,21 +5,20 @@ import 'dart:async';
 import 'utils/firulas.dart';
 
 Future<void> main() async {
+  while (true) {
+    stdout.write('Digite "Olá Mundo!": ');
 
-    while (true) {
-        stdout.write('Digite "Olá Mundo!": ');
+    String? mensagem = stdin.readLineSync();
 
-        String? mensagem = stdin.readLineSync();
+    // if mensagem for null, usa '' (string vazia)
+    String mensagemNormalizada = normalizarTexto(mensagem ?? '');
 
-        // if mensagem for null, usa '' (string vazia)
-        String mensagemNormalizada = normalizarTexto(mensagem ?? '');
-
-        if (mensagemNormalizada.toLowerCase() == 'ola mundo!') {
-            print('Obrigada!')
-            await finalizarPrograma();
-            break;
-        } else {
-            print('Mensagem incorreta! Tente novamente.');
-        }
+    if (mensagemNormalizada.toLowerCase() == 'ola mundo!') {
+      print('Obrigada!');
+      await finalizarPrograma();
+      break;
+    } else {
+      print('Mensagem incorreta! Tente novamente.');
     }
+  }
 }
