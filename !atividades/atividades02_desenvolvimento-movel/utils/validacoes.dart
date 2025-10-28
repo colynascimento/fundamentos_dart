@@ -1,3 +1,8 @@
 bool verificadorDeDouble(double? numero) {
-    return numero != null;
+  return numero != null;
 }
+
+bool verificadorDeNum(int? numero) {
+  return numero != null;
+}
+
