@@ -2,7 +2,6 @@
 // Calcule e imprima  a soma, o produto, a subtração, a divisão, o resto da divisão e a divisão inteira.
 
 import 'dart:io';
-import 'utils/validacoes.dart';
 
 void main() {
     stdout.write('Insira o 1º valor: ');
