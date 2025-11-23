@@ -22,9 +22,9 @@ Future<void> main() async {
     int c;
 
     if (a! == b!) {
-        c = a! + b!;
+        c = a + b;
     } else {
-        c = a! * b!;
+        c = a * b;
     }
 
     print('-' * 70);

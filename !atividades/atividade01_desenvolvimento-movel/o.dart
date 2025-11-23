@@ -21,10 +21,10 @@ Future<void> main() async {
         print('O número é neutro.');
         return;
     } else if (verificadorDePar(numero)) {
-        resultado = numero! + 5;
+        resultado = numero + 5;
         
     } else {
-        resultado = numero! + 8;
+        resultado = numero + 8;
     }
 
     print('O resultado da operação é $resultado.');

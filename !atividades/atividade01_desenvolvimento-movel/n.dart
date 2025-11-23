@@ -19,11 +19,11 @@ Future<void> main() async{
 
     if (valor! == 0) {
         print('O número $valor é neutro.');
-    } else if (valor! > 0) {
+    } else if (valor > 0) {
         resultado = 2 * valor;
         print('O número $valor é positivo.');
         print('O dobro de $valor é $resultado.');
-    } else if (valor! < 0) {
+    } else if (valor < 0) {
         resultado = 3 * valor;
         print('O número $valor é negativo.');
         print('O triplo de $valor é $resultado.');

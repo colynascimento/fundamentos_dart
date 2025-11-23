@@ -15,15 +15,15 @@ Future<void> main() async {
     }
 
     int x1 = numero! * 1;
-    int x2 = numero! * 2;
-    int x3 = numero! * 3;
-    int x4 = numero! * 4;
-    int x5 = numero! * 5;
-    int x6 = numero! * 6;
-    int x7 = numero! * 7;
-    int x8 = numero! * 8;
-    int x9 = numero! * 9;
-    int x10 = numero! * 10;
+    int x2 = numero * 2;
+    int x3 = numero * 3;
+    int x4 = numero * 4;
+    int x5 = numero * 5;
+    int x6 = numero * 6;
+    int x7 = numero * 7;
+    int x8 = numero * 8;
+    int x9 = numero * 9;
+    int x10 = numero * 10;
 
     print('-' * 70);
     print('A tabuada de $numero');

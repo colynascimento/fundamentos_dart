@@ -3,7 +3,6 @@
 
 import 'dart:io';
 import 'utils/validacoes.dart';
-import 'utils/firulas.dart';
 
 Future<void> main() async {
     stdout.write('Insira o dividendo: ');

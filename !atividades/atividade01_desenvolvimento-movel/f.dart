@@ -14,7 +14,7 @@ Future<void> main() async {
     }
 
     int antecessor = numero! - 1;
-    int sucessor = numero! + 1;
+    int sucessor = numero + 1;
 
     print('\n O número é $numero.');
     print('Seu antecessor é $antecessor.');

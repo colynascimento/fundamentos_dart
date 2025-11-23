@@ -16,7 +16,7 @@ Future<void> main() async {
         return;
     }
 
-    double imc = peso! / (altura! * altura!);
+    double imc = peso! / (altura! * altura);
 
     print('-' * 70);
     print('Seu IMC é ${imc.toStringAsFixed(2)}');

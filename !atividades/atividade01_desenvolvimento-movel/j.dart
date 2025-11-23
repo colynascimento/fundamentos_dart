@@ -18,8 +18,8 @@ Future<void> main() async {
     }
 
     double valorEmEuros = valor! * 0.16;
-    double valorEmDolar = valor! * 0.18;
-    double valorEmWon = valor! * 261.21;
+    double valorEmDolar = valor * 0.18;
+    double valorEmWon = valor * 261.21;
 
     print('-' * 70);
     print('Conversor de Moedas');
