@@ -14,7 +14,7 @@ Future<void> main() async {
 
   int fatorial = 1;
 
-  for (int i = 1; i <= numero!; i++) {
+  for (int i = 1; i <= numero; i++) {
     fatorial *= i;
   }
 

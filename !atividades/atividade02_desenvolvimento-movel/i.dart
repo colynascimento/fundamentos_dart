@@ -18,11 +18,11 @@ void main() async {
   print('');
   if (angulo == 180) {
     print('O ângulo $angulo classifica-se como um ângulo raso.');
-  } else if (180 > angulo! && angulo! > 90) {
+  } else if (180 > angulo! && angulo > 90) {
     print('O ângulo $angulo classifica-se como um ângulo obtuso.');
-  } else if (angulo! == 90) {
+  } else if (angulo == 90) {
     print('O ângulo $angulo classifica-se como um ângulo reto.');
-  } else if (90 > angulo! && angulo! > 0) {
+  } else if (90 > angulo && angulo > 0) {
     print('O ângulo $angulo classifica-se como um ângulo agudo');
   } else {
     print('O ângulo inserido é inválido.');

@@ -18,7 +18,7 @@ void main() async {
   }
 
   double temperatura = temperaturaInicial!;
-  if (temperaturaInicial! <= 25) {
+  if (temperaturaInicial <= 25) {
     print('O líquido já está resfriado!');
   } else {
     print('Iniciando o processo de resfriamento');
