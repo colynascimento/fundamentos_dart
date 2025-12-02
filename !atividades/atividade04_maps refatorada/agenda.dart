@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'cadastrar_contato.dart';
 
 List<Map<String, String?>> agenda = [
   {
@@ -39,7 +40,7 @@ void main() {
       );
       return;
     } else if (opcao == 1) {
-      
+      cadastrarContato(agenda);
     } else if (opcao == 2) {
       while (true) {
         print("\x1B[2J\x1B[0;0H");
@@ -212,8 +213,8 @@ void main() {
           }
 
           nome_atualizado =
-            nome_atualizado[0].toUpperCase() +
-            nome_atualizado.substring(1).toLowerCase();
+              nome_atualizado[0].toUpperCase() +
+              nome_atualizado.substring(1).toLowerCase();
           contato_correspondente['nome'] = nome_atualizado;
 
           print(
