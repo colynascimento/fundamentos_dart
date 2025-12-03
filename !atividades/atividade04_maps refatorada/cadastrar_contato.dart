@@ -55,6 +55,10 @@ void cadastrarContato(agenda) {
   print('2 - Cancelar e fazer novo cadastro');
   print('3 - Cancelar e voltar ao Menu Inicial');
 
+  confirmarCadastro(agenda, numero, email, nome);
+}
+
+void confirmarCadastro(agenda, numero, email, nome) {
   while (true) {
     stdout.write('\nDigite a opção escolhida: ');
     int? opcaoCadastro = int.tryParse(stdin.readLineSync()?.trim() ?? '');
@@ -82,7 +86,7 @@ void cadastrarContato(agenda) {
 
         stdout.write('Digite Enter para voltar ao Menu Inicial.');
         stdin.readLineSync();
-        break;
+        return;
 
       case 2:
         cadastrarContato(agenda);
