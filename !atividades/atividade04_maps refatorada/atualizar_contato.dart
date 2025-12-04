@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'utils/firulas.dart';
+import 'utils/utils.dart';
+import 'utils/validacoes.dart';
 
 void atualizarContato(agenda) {
   bool contatoAtualizado = false;
@@ -9,20 +11,10 @@ void atualizarContato(agenda) {
     print('_' * 50);
     print('ATUALIZAR CONTATOS\n');
 
-    if (agenda.isEmpty) {
-      print('Não há nenhum contato há ser exibido');
-      print('Digite Enter para voltar ao menu.');
-      print('_' * 50);
-      stdin.readLineSync();
+    if (!validarAgendaVazia(agenda)) {
       return;
     } else {
-      for (var contato in agenda) {
-        print('ID: ${contato['id']}');
-        print('Nome: ${contato['nome']}');
-        print('Número: ${contato['numero']}');
-        print('E-mail: ${contato['email']}');
-        print('_' * 50);
-      }
+      exibirAgenda(agenda);
     }
 
     stdout.write('\nQual o ID do contato que deseja atualizar? ');
@@ -44,6 +36,7 @@ void atualizarContato(agenda) {
     print('3 - E-mail: ${contato_correspondente['email']}');
     print('4 - Voltar ao menu inicial');
     print('_' * 50);
+
     stdout.write('Qual dado deseja atualizar? ');
     int? dado_atualizacao = int.tryParse(stdin.readLineSync()?.trim() ?? '');
 
@@ -62,49 +55,9 @@ void atualizarContato(agenda) {
     }
 
     if (dado_atualizacao == 1) {
-      print('_' * 50);
-      print('ATUALIZAR NOME\n');
-      print('Nome atual do contato: ${contato_correspondente['nome']}');
-      stdout.write('Digite o novo nome do contato: ');
-      String? nome_atualizado = stdin.readLineSync()?.trim() ?? '';
-
-      if (nome_atualizado.isEmpty) {
-        print('O nome não pode ficar em branco.');
-        print('_' * 50);
-        stdin.readLineSync();
-        continue;
-      }
-
-      nome_atualizado =
-          nome_atualizado[0].toUpperCase() +
-          nome_atualizado.substring(1).toLowerCase();
-      contato_correspondente['nome'] = nome_atualizado;
-
-      print('O nome do contato foi alterado alterado para $nome_atualizado.');
-      print('Digite Enter para voltar ao menu.');
-      print('_' * 50);
-      stdout.write('');
-      stdin.readLineSync();
-
       contatoAtualizado = true;
     } else if (dado_atualizacao == 2) {
-      print('_' * 50);
-      print('ATUALIZAR NÚMERO\n');
-      print('Número atual do contato: ${contato_correspondente['numero']}');
-      stdout.write('Digite o novo número do contato: ');
-      String? numero_atualizado = stdin.readLineSync()?.trim() ?? '';
-
-      if (numero_atualizado.isEmpty) {
-        numero_atualizado = 'Não informado';
-      }
-
-      contato_correspondente['numero'] = numero_atualizado;
-
-      print('O nome do contato foi alterado para $numero_atualizado.');
-      print('Digite Enter para voltar ao menu.');
-      print('_' * 50);
-      stdout.write('');
-      stdin.readLineSync();
+      
       contatoAtualizado = true;
     } else if (dado_atualizacao == 3) {
       print('_' * 50);
@@ -129,6 +82,61 @@ void atualizarContato(agenda) {
   }
 }
 
+void atualizarNome(agenda, contato) {
+  while (true) {
+    print('_' * 50);
+    print('ATUALIZAR NOME');
+    print('\nNome atual do contato: ${contato['nome']}');
+
+    stdout.write('Digite o novo nome do contato: ');
+    String? nome_atualizado = stdin.readLineSync()?.trim() ?? '';
+
+    if (!validarEntradaVazia(nome_atualizado)) {
+      continue;
+    }
+
+    nome_atualizado = capitalizarNome(nome_atualizado);
+    contato['nome'] = nome_atualizado;
+
+    print('O nome do contato foi alterado alterado para $nome_atualizado.');
+    print('Digite Enter para voltar ao menu.');
+    print('_' * 50);
+    stdin.readLineSync();
+    break;
+  }
+}
+
+void atualizarNumero(agenda, contato) {
+  print('_' * 50);
+  print('ATUALIZAR NÚMERO\n');
+  print('Número atual do contato: ${contato['numero']}');
+
+  stdout.write('Digite o novo número do contato: ');
+  String? numero_atualizado = stdin.readLineSync()?.trim() ?? '';
+
+  if (numero_atualizado.isEmpty) {
+    numero_atualizado = 'Não informado';
+  }
+
+  contato['numero'] = numero_atualizado;
+
+  print('O nome do contato foi alterado para $numero_atualizado.');
+  print('Digite Enter para voltar ao menu.');
+  print('_' * 50);
+  stdin.readLineSync();
+}
+
+bool validarAgendaVazia(agenda) {
+  if (agenda.isEmpty) {
+    print('Não há nenhum contato há ser exibido');
+    print('Digite Enter para voltar ao menu.');
+    print('_' * 50);
+    stdin.readLineSync();
+    return false;
+  }
+  return true;
+}
+
 bool validarID(agenda, ids_agenda, id_atualizacao) {
   if (id_atualizacao == null) {
     print(
@@ -138,9 +146,7 @@ bool validarID(agenda, ids_agenda, id_atualizacao) {
     stdin.readLineSync();
     return false;
   } else if (!ids_agenda.contains(id_atualizacao.toString())) {
-    print(
-      '\nEsse ID não está na agenda de contatos.',
-    );
+    print('\nEsse ID não está na agenda de contatos.');
     print('Digite Enter para tentar novamente.');
     stdin.readLineSync();
     return false;

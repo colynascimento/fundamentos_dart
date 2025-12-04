@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'utils/firulas.dart';
+import 'utils/utils.dart';
 import 'dart:math';
 
 void cadastrarContato(agenda) {
@@ -40,9 +41,7 @@ void cadastrarContato(agenda) {
     break;
   }
 
-  nome =
-      nome![0].toUpperCase() +
-      nome.substring(1).toLowerCase(); // Garante a capitalização do nome
+  nome = capitalizarNome(nome);
 
   print('_' * 50);
   print('CONFIRMAÇÃO CADASTRO');
