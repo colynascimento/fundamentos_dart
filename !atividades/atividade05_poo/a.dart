@@ -28,15 +28,18 @@ class Calculadora {
     return valor1 % valor2;
   }
 
-  int reultadoDivisaoInteira() {
+  int resultadoDivisaoInteira() {
     return valor1 ~/ valor2;
   }
 
-  String exibir() {
+  void exibir() {
     print('\n----- Calcular Valores -----\n');
-    print('Somar: $valor1 + $valor2 = ');
-    print('Multiplicar: $valor1 × $valor2 =');
-    
+    print('Soma: $valor1 + $valor2 = ${somar()}');
+    print('Subtração: $valor1 - $valor2 = ${subtrair()}');
+    print('Multiplicação: $valor1 × $valor2 = ${multiplicar()}');
+    print('Divisão: $valor1 ÷ $valor2 = ${dividir()}');
+    print('Resto da divisão: $valor1 % $valor2 = ${resultadoRestoDivisao()}');
+    print('Divisão inteira: $valor1 ~/ $valor2 = ${resultadoDivisaoInteira()}');
   }
 }
 
@@ -51,4 +54,7 @@ void main() {
     print('Por favor, insira apenas números.');
     return;
   }
+
+  var calculadora = Calculadora(valor1: valor1, valor2: valor2);
+  calculadora.exibir();
 }
